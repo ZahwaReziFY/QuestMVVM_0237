@@ -32,6 +32,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.R
+import androidx.compose.material3.TopAppBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -48,8 +49,9 @@ fun FormSiswa(
     val listData: MutableList<String> = mutableListOf(txtNama, txtGender, txtAlamat)
 
     Scaffold(modifier = modifier,
-        topBar = { Text(stringResource(id = R.string.app_name), color = Color.White),
-            colors = TopAppBarDefaults.mediumTopAppBarColors(colorResource(id = R.color.purple_500))
+        topBar = { TopAppBar(title = { Text(stringResource(id = R.string.app_name), color = Color.White) },
+            colors = TopAppBarDefaults.topAppBarColors(containerColor = colorResource(id = R.color.purple_500))
+        )
         }
     ) { isiRuang ->
 
